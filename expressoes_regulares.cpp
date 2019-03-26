@@ -35,7 +35,7 @@ void NumeroTel(string str){
     cin >> str;
 
     // Especifica o padrão do telefone 4 ou 5 dígitos, hífen, 4 dígitos
-    regex num("[[:d:]]{4,5} - [[:d:]]{4}");
+    regex num("[[:d:]]{4,5}-[[:d:]]{4}");
 
     //Verifica se o número passado é válido
     if(regex_match(str, num)){
