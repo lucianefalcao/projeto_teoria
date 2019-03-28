@@ -6,15 +6,16 @@ using namespace std;
 
 /**Verifica se o número de CPF é válido 
  * Se for válido, escreve a mensagem CPF Válido
- * Se não for válido, escreve a mensagem CPF não válido **/
+ * Se não for válido, escreve a mensagem CPF não 
+ * válido **/
 void CPFValidacao(string str){
 
-    cout << "Digite o CPF" << endl;
+    cout << "Digite o CPF: ";
 
     cin >> str;
 
     // Especifica o padrão do CPF 3 dígitos, ponto, 3 dígitos, hífen, 2 dígitos 
-    regex cpf("[[:d:]]{3}.[[:d:]]{3}-[[:d:]]{2}");
+    regex cpf("[[:d:]]{3}(\\.)[[:d:]]{3}(\\.)[[:d:]]{3}-[[:d:]]{2}");
 
     //Verifica se o CPF passado é válido
     if(regex_match(str, cpf)){
@@ -30,7 +31,7 @@ void CPFValidacao(string str){
  * Se não for válido, escreve a mensagem telefone não válido **/
 void NumeroTel(string str){
 
-    cout << "Digite o telefone" << endl;
+    cout << "Digite o telefone: ";
     
     cin >> str;
 
@@ -51,7 +52,7 @@ void NumeroTel(string str){
  * Se não for válido, escreve a mensagem Email não válido **/
 void EmailValido(string str){
 
-    cout << endl << "Digite o email" << endl;
+    cout << endl << "Digite o email: ";
     
     cin >> str;
 
@@ -95,17 +96,11 @@ int main(){
     string str;
     int caso;
 
-    /*cout << "Escolha o que você deseja validar" << endl << "Opção 1: CPF" << endl
-        << "Opção 2: Número de Telefone" << endl << "Opção 3: Email" << endl << "Opção 4: URl" << endl
-        "Opção 5: Sair" << endl;*/
-     
-
-        /*cin >> caso;*/
     while(true){
 
-    cout << endl << "Escolha o que você deseja validar" << endl << "Opção 1: CPF" << endl
-        << "Opção 2: Número de Telefone" << endl << "Opção 3: Email" << endl << "Opção 4: URl" << endl <<
-        "Opção 5: Sair" << endl;
+        cout << endl << "Escolha o que você deseja validar" << endl << "Opção 1: CPF" << endl
+            << "Opção 2: Número de Telefone" << endl << "Opção 3: Email" << endl << "Opção 4: URl" << endl <<
+            "Opção 5: Sair" << endl;
 
         cin >> caso;
         switch (caso)
@@ -128,7 +123,6 @@ int main(){
                 break;
         }
     }     
-
 
     return 0;
 }
