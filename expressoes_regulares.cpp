@@ -18,10 +18,10 @@ void CPFValidacao(string str){
 
     //Verifica se o CPF passado é válido
     if(regex_match(str, cpf)){
-        cout << "CPF Válido!" << endl;
+        cout << endl << "CPF Válido!" << endl;
     }
     else{
-        cout << "CPF não válido" << endl;
+        cout << endl << "CPF não válido" << endl;
     }
 }
 
@@ -39,10 +39,10 @@ void NumeroTel(string str){
 
     //Verifica se o número passado é válido
     if(regex_match(str, num)){
-        cout << "Telefone Válido!" << endl;
+        cout << endl << "Telefone Válido!" << endl;
     }
     else{
-        cout << "Telefone não válido" << endl;
+        cout << endl << "Telefone não válido" << endl;
     }
 }
 
@@ -51,7 +51,7 @@ void NumeroTel(string str){
  * Se não for válido, escreve a mensagem Email não válido **/
 void EmailValido(string str){
 
-    cout << "Digite o email" << endl;
+    cout << endl << "Digite o email" << endl;
     
     cin >> str;
 
@@ -60,10 +60,10 @@ void EmailValido(string str){
     
     //Verifica se o email passado é válido
     if(regex_match(str, email)){
-        cout << "Email Válido!" << endl;
+        cout << endl << "Email Válido!" << endl;
     }
     else{
-        cout << "Email não válido" << endl;
+        cout << endl << "Email não válido" << endl;
     }
 
 }
@@ -73,7 +73,7 @@ void EmailValido(string str){
  * Se não for válido, escreve a mensagem Email não válido **/
 void URLValida(string str){
 
-    cout << "Digite a URL" << endl;
+    cout << "Digite a URL: ";
     
     cin >> str;
 
@@ -82,10 +82,10 @@ void URLValida(string str){
     
     //Verifica se a url passada é válido
     if(regex_match(str, url)){
-        cout << "URL Válida!" << endl;
+        cout << endl << "URL Válida!" << endl;
     }
     else{
-        cout << "URL não válida" << endl;
+        cout << endl << "URL não válida" << endl;
     }
 
 }
@@ -95,12 +95,19 @@ int main(){
     string str;
     int caso;
 
-    cout << "Escolha o que você deseja validar" << endl << "Opção 1: CPF" << endl
-        << "Opção 2: Número de Telefone" << endl << "Opção 3: Email" << endl << "Opção 4: URl" << endl;
+    /*cout << "Escolha o que você deseja validar" << endl << "Opção 1: CPF" << endl
+        << "Opção 2: Número de Telefone" << endl << "Opção 3: Email" << endl << "Opção 4: URl" << endl
+        "Opção 5: Sair" << endl;*/
      
 
-        cin >> caso;
+        /*cin >> caso;*/
+    while(true){
 
+    cout << endl << "Escolha o que você deseja validar" << endl << "Opção 1: CPF" << endl
+        << "Opção 2: Número de Telefone" << endl << "Opção 3: Email" << endl << "Opção 4: URl" << endl <<
+        "Opção 5: Sair" << endl;
+
+        cin >> caso;
         switch (caso)
         {
             case 1:
@@ -114,15 +121,14 @@ int main(){
                 break;      
             case 4:
                 URLValida(str);
-                break;    
+                break;  
+            case 5: 
+                exit(0);  
             default:
                 break;
         }
-        
-        //CPFValidacao(str);
-        //NumeroTel(str);
-        //EmailValido(str);
-        //URLValida(str);
+    }     
+
 
     return 0;
 }
